@@ -19,3 +19,8 @@ if (!(window.console && console.log)) {
 $(function(){
     $('.b-hdr__counter__item').lettering();
 });
+
+$(function(){
+    $(".scrollable").scrollable();
+});
+

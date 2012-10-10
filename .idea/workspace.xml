@@ -22,19 +22,19 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="146" column="22" selection-start="0" selection-end="8050" vertical-scroll-proportion="-3.9285715">
+                <state line="232" column="509" selection-start="12794" selection-end="12794" vertical-scroll-proportion="0.58113205">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="template.html" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="template.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/template.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="204" column="7" selection-start="8050" selection-end="8050" vertical-scroll-proportion="0.91698116">
+                <state line="191" column="0" selection-start="7497" selection-end="7497" vertical-scroll-proportion="-48.785713">
                   <folding />
                 </state>
               </provider>
@@ -43,13 +43,8 @@
           <file leaf-file-name="screen.scss" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/sass/screen.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="152" column="36" selection-start="3590" selection-end="3590" vertical-scroll-proportion="-13.666667">
-                  <folding>
-                    <marker date="1349888335546" expanded="true" signature="2227:2241" placeholder="{...}" />
-                    <marker date="1349888335546" expanded="true" signature="2252:2267" placeholder="{...}" />
-                    <marker date="1349888335546" expanded="true" signature="2310:2368" placeholder="{...}" />
-                    <marker date="1349888335546" expanded="true" signature="2407:2478" placeholder="{...}" />
-                  </folding>
+                <state line="173" column="0" selection-start="4239" selection-end="4269" vertical-scroll-proportion="-22.666666">
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -61,7 +56,7 @@
           <file leaf-file-name="screen.scss" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/sass/screen.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="383" column="2" selection-start="9893" selection-end="9893" vertical-scroll-proportion="0.76344085">
+                <state line="488" column="14" selection-start="11978" selection-end="11978" vertical-scroll-proportion="0.60573477">
                   <folding />
                 </state>
               </provider>
@@ -70,7 +65,7 @@
           <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="20" column="3" selection-start="2069" selection-end="2069" vertical-scroll-proportion="0.0">
+                <state line="26" column="0" selection-start="2125" selection-end="2125" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -88,10 +83,10 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/js/main.js" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/sass/screen.scss" />
         <option value="$PROJECT_DIR$/template.html" />
+        <option value="$PROJECT_DIR$/js/main.js" />
+        <option value="$PROJECT_DIR$/sass/screen.scss" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -227,7 +222,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12493411" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12493411" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -297,33 +292,28 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="3" selection-start="2069" selection-end="2069" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sass/screen.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="152" column="36" selection-start="3590" selection-end="3590" vertical-scroll-proportion="-13.666667">
-          <folding>
-            <marker date="1349888335546" expanded="true" signature="2227:2241" placeholder="{...}" />
-            <marker date="1349888335546" expanded="true" signature="2252:2267" placeholder="{...}" />
-            <marker date="1349888335546" expanded="true" signature="2310:2368" placeholder="{...}" />
-            <marker date="1349888335546" expanded="true" signature="2407:2478" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="146" column="22" selection-start="0" selection-end="8050" vertical-scroll-proportion="-3.9285715">
+        <state line="26" column="0" selection-start="2125" selection-end="2125" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/template.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="204" column="7" selection-start="8050" selection-end="8050" vertical-scroll-proportion="0.91698116">
+        <state line="191" column="0" selection-start="7497" selection-end="7497" vertical-scroll-proportion="-48.785713">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sass/screen.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="173" column="0" selection-start="4239" selection-end="4269" vertical-scroll-proportion="-22.666666">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="232" column="509" selection-start="12794" selection-end="12794" vertical-scroll-proportion="0.58113205">
           <folding />
         </state>
       </provider>

@@ -62,36 +62,185 @@
         </div>
     </header>
     <!--END HEADER-->
-    <!--main page search-->
-    <form class="b-mainPage__search">
-        <label>
-            <span class="bigText ir">Я хочу:</span>
-            <input type="search" placeholder="Что-то конкретное">
-            <button type="submit">Найти</button>
-        </label>
-        <div class="example">Например: олимпийские медали России суши, ролы, водчела</div>
-    </form><!--END main page search-->
     <!-- CONTENT -->
     <div class="l-contentWrap">
-        <!--breadcrumbs-->
-        <nav class="b-breadcrumbs" itemprop='breadcrumb'>
-            <ul>
-                <li><a href="#"></a></li>
-            </ul>
-        </nav>
+        <!--index page search-->
+        <form class="b-mainPage__search">
+            <label>
+                <span class="bigText ir">Я хочу:</span>
+                <input type="search" placeholder="Что-то конкретное">
+                <button type="submit">Найти</button>
+            </label>
+            <div class="example">Например: олимпийские медали России суши, ролы, водчела</div>
+        </form><!--END index page search-->
 
-        <!--main column-->
-        <div class="l-columnMain" role="main"></div>
-        <!--end main column-->
+        <div class="l-padding_lr_30">
+            <!--dishes list-->
+            <div class="b-indexPage__dishes">
+                <!--one dish-->
+                <a href="#" class="item">
+                    <img src="images/indexPage__images/dish-1.jpg" alt="">
+                    <span class="label">Суши и ролы</span>
+                </a>
+                <!--one dish-->
+                <a href="#" class="item">
+                    <img src="images/indexPage__images/dish-2.jpg" alt="">
+                    <span class="label">Пицца</span>
+                </a>
+                <!--one dish-->
+                <a href="#" class="item">
+                    <img src="images/indexPage__images/dish-3.jpg" alt="">
+                    <span class="label">Гриль</span>
+                </a>
+                <!--one dish-->
+                <a href="#" class="item">
+                    <img src="images/indexPage__images/dish-4.jpg" alt="">
+                    <span class="label">Салаты</span>
+                </a>
+                <!--one dish-->
+                <a href="#" class="item">
+                    <img src="images/indexPage__images/dish-5.jpg" alt="">
+                    <span class="label">Алкоголь</span>
+                </a>
+                <!--one dish-->
+                <a href="#" class="item">
+                    <img src="images/indexPage__images/dish-6.jpg" alt="">
+                    <span class="label">Супы</span>
+                </a>
+                <!--one dish-->
+                <a href="#" class="item">
+                    <img src="images/indexPage__images/dish-7.jpg" alt="">
+                    <span class="label">Горячие блюда</span>
+                </a>
+                <!--one dish-->
+                <a href="#" class="item">
+                    <img src="images/indexPage__images/dish-8.jpg" alt="">
+                    <span class="label">Мясные блюда</span>
+                </a>
+                <!--one dish-->
+                <a href="#" class="item">
+                    <img src="images/indexPage__images/dish-9.jpg" alt="">
+                    <span class="label">Рыба</span>
+                </a>
+                <!--one dish-->
+                <a href="#" class="item">
+                    <img src="images/indexPage__images/dish-10.jpg" alt="">
+                    <span class="label">Десерты</span>
+                </a>
+            </div><!--end dishes list-->
 
-        <!--left column-->
-        <aside class="l-columnLt" itemscope itemtype='http://schema.org/WPSideBar'></aside>
-        <!--end left column-->
+            <div class="b-indexPage__openNow">
+                <header>
+                    <span class="title">Открыты сейчас</span>
+                    <a href="#" class="allItems">Все рестораны</a>
+                </header>
+                <div class="l-jList">
+                    <a class="scrollable__prev prev"></a>
+                    <div class="scrollable">
+                        <div class="scrollable__viewport">
+                            <div class="scrollable__item">
+                                <img src="images/indexPage__images/brand-1.jpg" alt="">
+                                <img src="images/indexPage__images/brand-2.jpg" alt="">
+                                <img src="images/indexPage__images/brand-3.jpg" alt="">
+                                <img src="images/indexPage__images/brand-4.jpg" alt="">
+                                <img src="images/indexPage__images/brand-1.jpg" alt="">
+                            </div>
+                            <div class="scrollable__item">
+                                <img src="images/indexPage__images/brand-3.jpg" alt="">
+                                <img src="images/indexPage__images/brand-1.jpg" alt="">
+                                <img src="images/indexPage__images/brand-1.jpg" alt="">
+                                <img src="images/indexPage__images/brand-2.jpg" alt="">
+                                <img src="images/indexPage__images/brand-4.jpg" alt="">
+                            </div>
+                            <div class="scrollable__item">
+                                <img src="images/indexPage__images/brand-2.jpg" alt="">
+                                <img src="images/indexPage__images/brand-1.jpg" alt="">
+                                <img src="images/indexPage__images/brand-4.jpg" alt="">
+                                <img src="images/indexPage__images/brand-1.jpg" alt="">
+                                <img src="images/indexPage__images/brand-3.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <a class="scrollable__next next"></a>
+                </div>
+            </div><!--end indexPage__openNow-->
+            <!--banners-->
+            <div class="l-jList">
+                <a href="#" class="pageIndex__bnr"><img src="images/indexPage__images/bnr-1.jpg" alt=""></a>
+                <a href="#" class="pageIndex__bnr"><img src="images/indexPage__images/bnr-2.jpg" alt=""></a>
+                <a href="#" class="pageIndex__bnr"><img src="images/indexPage__images/bnr-3.jpg" alt=""></a>
+            </div>
 
-        <!--right column-->
-        <aside class="l-columnRt" itemscope itemtype='http://schema.org/WPSideBar'></aside>
-        <!--end right column-->
+            <div class="l-jList">
+                <!--news-->
+                <div class="indexPage__news">
+                    <header>
+                        <span class="title">Новости</span>
+                        <a href="#" class="readAll">Все новости</a>
+                    </header>
+                    <!--one new-->
+                    <div class="item">
+                        <header>
+                            <time datetime="2012-12-21">21 января 2012</time>
+                            <a href="#">KFC</a>
+                        </header>
+                        <a href="#" class="item__link">Mare Azzuro – рыбное место, где готовят только лучшие блюда из морепродуктов высшего качества!</a>
+                    </div>
+                    <!--one new-->
+                    <div class="item">
+                        <header>
+                            <time datetime="2012-12-21">21 января 2012</time>
+                            <a href="#">KFC</a>
+                        </header>
+                        <a href="#" class="item__link">Mare Azzuro – рыбное место, где готовят только лучшие блюда из морепродуктов высшего качества!</a>
+                    </div>
+                </div>
+                <!--discount-->
+                <div class="indexPage__discount">
+                    <header>
+                        <span class="title">Акции</span>
+                        <a href="#" class="readAll">Все акции</a>
+                    </header>
+                    <!--one new-->
+                    <div class="item">
+                        <header>
+                            <time datetime="2012-12-21">21 января 2012</time>
+                            <a href="#">KFC</a>
+                        </header>
+                        <a href="#" class="item__link">Mare Azzuro – рыбное место, где готовят только лучшие блюда из морепродуктов высшего качества!</a>
+                    </div>
+                    <!--one new-->
+                    <div class="item">
+                        <header>
+                            <time datetime="2012-12-21">21 января 2012</time>
+                            <a href="#">KFC</a>
+                        </header>
+                        <a href="#" class="item__link">Mare Azzuro – рыбное место, где готовят только лучшие блюда из морепродуктов высшего качества!</a>
+                    </div>
+                </div><!--end discount-->
+            </div><!--end l-jList-->
 
+            <div class="indexPage__promoText">
+                <a class="scrollable__prev prev"></a>
+                <div class="scrollable">
+                    <div class="scrollable__viewport">
+                        <div class="scrollable__item">
+                            <header class="item__title">Заказ еды на дом и в офис – удобный сервис</header>
+                            <p>Заказывать обеды в офис в Зеленограде особенно удобно людям с коротким перерывом на обед и достаточно отдаленным местонахождением офиса. Супы, жаркое и овощные гарниры по разумным ценам, приготовленные из продуктов высокого качества, станут выгодной альтернативой столовой офиса или оптимальной заменой салатам и бутербродам, принесенным из дома. Отдавая предпочтение доставке обедов (Зеленоград) от компании «Нова Фуд», Вы будете уверенны в том, что заказанные Вами блюда будут на столе в указанное время. Выбранные Вами блюда, будь то домашняя еда или свежеприготовленные изысканные салаты, произведут хорошее впечатление, доставят удовольствие своими незабываемыми вкусовыми качествами и эстетичным оформлением.</p>
+                        </div>
+                        <div class="scrollable__item">
+                            <header class="item__title">Заказ еды на дом и в офис – удобный сервис</header>
+                            <p>Заказывать обеды в офис в Зеленограде особенно удобно людям с коротким перерывом на обед и достаточно отдаленным местонахождением офиса. Супы, жаркое и овощные гарниры по разумным ценам, приготовленные из продуктов высокого качества, станут выгодной альтернативой столовой офиса или оптимальной заменой салатам и бутербродам, принесенным из дома. Отдавая предпочтение доставке обедов (Зеленоград) от компании «Нова Фуд», Вы будете уверенны в том, что заказанные Вами блюда будут</p>
+                        </div>
+                        <div class="scrollable__item">
+                            <header class="item__title">Заказ еды на дом и в офис – удобный сервис</header>
+                            <p>Заказывать обеды в офис в Зеленограде особенно удобно людям с коротким перерывом на обед и достаточно отдаленным местонахождением офиса. Супы, жаркое и овощные гарниры по разумным ценам, приготовленные из продуктов высокого качества, станут выгодной альтернативой столовой офиса или оптимальной заменой салатам и бутербродам, принесенным из дома. Отдавая предпочтение доставке обедов (Зеленоград) от компании «Нова Фуд», Вы будете уверенны в том</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="scrollable__next next"></a>
+            </div>
+        </div><!--end padding_lr_30-->
     </div><!-- END CONTENT -->
 </div><!-- END WRAPPER -->
 
@@ -189,6 +338,7 @@
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
+<script src="http://cdn.jquerytools.org/1.2.7/all/jquery.tools.min.js"></script>
 <script src="js/plugins/jquery.lettering.js"></script>
 <script src="js/main.js"></script>
 

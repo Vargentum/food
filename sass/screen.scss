@@ -51,7 +51,7 @@ $linkVisitedColor:#3384b8;
 $linkFocusedColor:#b53228;
 //colors
 $attentionColor: #c71d2a;
-
+$borderColor: #e2e2e2;
 //base font params--------------------
 $baseFontFamily: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
 $baseFontColor: #444;
@@ -127,7 +127,6 @@ $ftrHeight:430px;
   >*{
     text-align: left;
     @include inline-block;
-    vertical-align: top;
     line-height: $baseLineHeight;font-size: $baseFontSize;
   }
 }
@@ -147,25 +146,40 @@ $ftrHeight:430px;
 }
 /*OBJECTS mixins
 --------------------------------------------*/
+@mixin link-baseColor_attentionColor{@include link-colors(#535353, $attentionColor, $attentionColor, #535353, $attentionColor);}
 @mixin ftr__list{
   header{
     font-size: 1.231em; font-weight: bold;
     color: #4d8b03;margin-bottom: 15px;
   }
   a{
+    @include link-baseColor_attentionColor;
     display: block;
     padding: 3px 0;
-    @include link-colors(#535353, #4d8b03, #4d8b03, #535353,#4d8b03);
     &:hover{@include scale;}
   }
 }
 .l-centering{@include vCtr; height: inherit;}
+
+@mixin aritcles__title{
+  @include box-shadow(0 1px 1px rgba(0,0,0,.37));
+  @include background-image(linear-gradient(bottom, rgba(0,0,0,.1), rgba(255,255,255,.1)));
+  @include ie9-gradient-support;
+  padding:5px 10px;
+  font-size: 1.385em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 1px rgba(0,0,0,.43);
+  //background-color: #4e8814;
+  //background-color: #c71d2a;
+}
 /*LAYOUT
 ----------------------------------------------------------*/
 html, button, input, select, textarea {
   height: 100%;
   font-family: $baseFontFamily;
-  color: $baseFontColor;
+  co: $baseFontColor;
 }
 body {
   height: 100%;
@@ -255,6 +269,7 @@ input[type=text]{height: 25px;}
     background-color: #fff;
     border: solid 1px #d1d1d1;
     @include background-image(linear-gradient(bottom, rgba(0,0,0,.05), rgba(255,255,255,.05)));
+    @include ie9-gradient-support;
     margin:0 2px;
     padding: 2px 4px;
   }
@@ -276,7 +291,7 @@ input[type=text]{height: 25px;}
 .l-baseFooter {
   position: relative;
   padding: 40px 30px 100px;
-  border-top: 1px solid #e2e2e2;
+  border-top: 1px solid $borderColor;
 }
 .b-ftr__copyrights{
   position: absolute;
@@ -307,6 +322,7 @@ input[type=text]{height: 25px;}
 }
 /*MAIN page specific elements styles
 -----------------------------------------------------------------------------------------------*/
+.b-indexPage{padding:0 30px;}
 .b-mainPage__search{
   padding:0 55px;
   position: relative;
@@ -372,22 +388,185 @@ input[type=text]{height: 25px;}
     line-height: 1.2;
   }
 }
+/*dishes list*/
+.b-indexPage__dishes{
+  margin: 30px 0;
+  @include jList;
+  .item{
+    margin:5px 0;
+    width: 181px;
+    height: 207px;
+    @include border-radius;
+    background-color: #fff;
+    border: solid 1px rgba(0,0,0,.1);
+    padding-top: 5px;
+    text-align: center;
+    @include link-baseColor_attentionColor;
+    &:hover, &:focus{
+      outline: none;@include box-shadow(0 0 6px rgba(0,0,0,.45));
+      @include rotate(360deg);
+    }
+  }
+  .label{
+    font-size: 1.231em; font-weight: bold;
+    line-height: 2;
+    display: block;
+  }
+}
+/*indexPage__openNow*/
+.b-indexPage__openNow{
+  margin-top: 30px;
+  border-top: 1px solid $borderColor;
+  .title{
+    font-size: 1.538em;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;top:-14px;
+    background: #fff;
+    padding-right: 10px;
+  }
+  .allItems{
+    position: relative;top:-10px;
+    background: #fff;
+    padding-left: 10px;
+    font-weight: bold;
+    float: right;
+    font-size: 1.077em;
+  }
+  .scrollable{
+    margin:15px 0;
+    width: 800px;
+    height:60px;
+  }
+  .scrollable img {
+    width:125px;
+    height:60px;
+  }
+  .scrollable__item {width:800px;}
+}
+//pageIndex banners
+.pageIndex__bnr{
+  padding: 5px;
+  @include border-radius;
+  border:1px solid $borderColor;
+}
+//indexPage__news
+.indexPage__news{
+  width:410px;
+  margin:40px 0 20px;
+  >header{margin-bottom: 20px;}
+  .title{
+    background-color: #c71d2a;
+    @include aritcles__title;
+  }
+  .readAll{
+    color:#b6b6b6;
+    font-weight: bold;
+    font-size: 1.077em;
+    margin:0 10px;
+  }
+  .item{
+    margin-bottom: 10px;
+    header{font-style: italic; color:#b6b6b6;}
+    time:after{content: ',';}
+  }
+  .item__link{@include link-baseColor_attentionColor;}
+}
+.indexPage__discount{
+  @extend .indexPage__news;
+  .title{background-color: #4e8814;}
+}
+//promoText(scrollable)
+.indexPage__promoText{
+  border-top: 1px solid $borderColor;
+  padding:5px 0;
+  @include jList;
+  .scrollable{
+    margin:15px 0;
+    width: 800px;
+    height: auto;
+    height: 140px;
+  }
+  .scrollable__item {width:800px;}
+  .item__title{
+    font-size: 22px;
+    color:$attentionColor;
+    font-style: italic;
+    margin-bottom: 5px;
+  }
+}
 /*some page specific elements styles
 ------------------------------------------------------------------------------------------------*/
 /*some page specific elements styles
 ------------------------------------------------------------------------------------------------*/
 /*plugins styles
 ------------------------------------------------------------------------------------------------*/
+//scrollable
+
+
+
+//.scrollable{
+//  margin:15px 0;
+//  width: 800px;
+//  height:60px;
+//}
+//.scrollable img {
+//  width:125px;
+//  height:60px;
+//}
+//.scrollable__item {width:800px;}
+
+.scrollable {
+  @include inline-block;
+  position:relative;
+  overflow:hidden;
+}
+.scrollable__viewport{
+  width:20000em;
+  position:absolute;
+  clear:both;
+}
+.scrollable__item {
+  @include inline-block;
+  @include jList;
+}
+.scrollable .active {
+  border:2px solid #000;
+  position:relative;
+  cursor:default;
+}
+.scrollable__prev{
+  @include inline-block;
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  @include border-radius(50%);
+  background-color: rgba(196,196,196,0);
+  border: solid 1px rgba(0,0,0,.1);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-image: url(../images/prev.png);
+}
+.scrollable__next{
+  @extend .scrollable__prev;
+  background-image: url(../images/next.png);
+}
+.disabled{visibility: hidden;}
+
 /*MODIFICATORS styles
 ------------------------------------------------------------------------------------------------*/
 .m-width__340{width:340px;}
 .m-margin_40{margin: 40px;}
+//layout modificators
+.l-padding_lr_30{padding:0 30px;}
+.l-jList{@include jList;}
 //debug
-* { outline: 2px dotted red; }
-* * { outline: 2px dotted green; }
-* * * { outline: 2px dotted orange; }
-* * * * { outline: 2px dotted blue; }
-* * * * * { outline: 1px solid red; }
-* * * * * * { outline: 1px solid green; }
-* * * * * * * { outline: 1px solid orange; }
-* * * * * * * * { outline: 1px solid blue; }
+//* { outline: 2px dotted red; }
+//* * { outline: 2px dotted green; }
+//* * * { outline: 2px dotted orange; }
+//* * * * { outline: 2px dotted blue; }
+//* * * * * { outline: 1px solid red; }
+//* * * * * * { outline: 1px solid green; }
+//* * * * * * * { outline: 1px solid orange; }
+//* * * * * * * * { outline: 1px solid blue; }
