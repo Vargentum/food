@@ -1,0 +1,393 @@
+@charset "utf-8";
+@import "compass/reset";
+
+@import "h5bp";
+@include h5bp-display;
+@include h5bp-selection;
+@include h5bp-chromeframe;
+@include h5bp-media;
+@include h5bp-base;
+@include h5bp-typography;
+@include h5bp-figures;
+@include h5bp-forms;
+@include h5bp-embeds;
+@include h5bp-tables;
+//@include h5bp-links;
+//@include h5bp-lists;
+@include h5bp-helpers;
+
+@import "compass/layout";
+@import "compass/css3";
+@import "compass/typography";
+@import "compass/utilities";
+
+
+//border-box-sizing for all elems
+*{@include box-sizing(border-box);}
+input[type=search]{@include box-sizing(border-box);}
+
+/* FONT FACing
+--------------------------------------------*/
+@each $font-face in
+myriadprocond-regular,
+myriadprocond-bold{
+  @font-face {
+    font-family: $font-face; font-style: normal; font-weight: normal;
+    src: url('../fonts/#{$font-face}.eot');
+    src: url('../fonts/#{$font-face}.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/#{$font-face}.woff') format('woff'),
+    url('../fonts/#{$font-face}.ttf')  format('truetype');
+  }
+}
+
+
+/*VARIABLES
+--------------------------------------------*/
+//set liks color here
+$linkDefaultColor:#3384b8;
+$linkHoverColor:#b53228;
+$linkActiveColor:#b53228;
+$linkVisitedColor:#3384b8;
+$linkFocusedColor:#b53228;
+//colors
+$attentionColor: #c71d2a;
+
+//base font params--------------------
+$baseFontFamily: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+$baseFontColor: #444;
+$baseFontSize:13px;
+$baseLineHeight: 1.4;
+//additional fonts
+$addFontRegular: myriadprocond-regular;
+$addFontBold: myriadprocond-bold;
+//layout params-----------------------
+$baseWidth: 1000px;
+$hdrHeight:165px;
+$ftrHeight:430px;
+
+/*HELPER CLASSES
+---------------------------------------------------------*/
+@mixin layout{
+  .l-baseWrap{
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto;
+    width: $baseWidth;
+  }
+  .l-contentWrap{padding-bottom: $ftrHeight + 20 !important;}
+  .l-baseFooter{
+    position: relative;
+    height: $ftrHeight;
+    margin: -$ftrHeight auto 0;
+    width: $baseWidth
+  }
+}
+//content editing zone styles
+@mixin contentEditable{}
+.contentEditable{@include contentEditable;}
+//floats
+.m-float-l{float: left;}
+.m-float-r{float: right;}
+//pseudo elems mixin
+@mixin pseudoBlockAbs{
+  content: '';
+  display: block;
+  position: absolute;
+}
+//vertical centering mixin
+@mixin vCtr{
+  display: table-cell;
+  height: inherit;
+  vertical-align: middle;
+}
+//for horisontal layouts
+@mixin hList{
+  .flexbox &{@include display-box;}
+  .no-flexbox & > *{
+    @include inline-block;
+    vertical-align: top;
+  }
+}
+@mixin jList{
+  text-align: justify;
+  line-height: 0;
+  font-size: 1px;
+  text-justify: newspaper;
+  zoom:1;
+  text-align-last: justify;
+  &:after{
+    content: "";
+    display: inline-block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    width: 100%;
+  }
+  >*{
+    text-align: left;
+    @include inline-block;
+    vertical-align: top;
+    line-height: $baseLineHeight;font-size: $baseFontSize;
+  }
+}
+@mixin jList-singleLine{
+  .flexbox &{@include display-box; @include box-pack(justify);}
+  .no-flexbox &{@include jList;}
+}
+//img wrapper
+@mixin imgWrap{
+  img{width:100%;height: 100%;}
+}
+//hack for ie9 - need for gradient backgrounds
+:root .gradient {filter: none \0/IE9; }
+@mixin ie9-gradient-support{
+  $experimental-support-for-svg: true;
+  @extend .gradient;
+}
+/*OBJECTS mixins
+--------------------------------------------*/
+@mixin ftr__list{
+  header{
+    font-size: 1.231em; font-weight: bold;
+    color: #4d8b03;margin-bottom: 15px;
+  }
+  a{
+    display: block;
+    padding: 3px 0;
+    @include link-colors(#535353, #4d8b03, #4d8b03, #535353,#4d8b03);
+    &:hover{@include scale;}
+  }
+}
+.l-centering{@include vCtr; height: inherit;}
+/*LAYOUT
+----------------------------------------------------------*/
+html, button, input, select, textarea {
+  height: 100%;
+  font-family: $baseFontFamily;
+  color: $baseFontColor;
+}
+body {
+  height: 100%;
+  font-size: $baseFontSize;
+  line-height: $baseLineHeight;
+  @include layout;
+  background: url(../images/bg-body.png);
+}
+a {
+  @include link-colors($linkDefaultColor, $linkHoverColor, $linkActiveColor, $linkVisitedColor, $linkFocusedColor);
+  @include single-transition(all,.4s,ease,0s);
+  &.current{color:$linkHoverColor;}
+}
+input[type=number]{width:40px; text-align: center;}
+input[type=text],textarea{width:380px;}
+input[type=text]{height: 25px;}
+
+.l-baseWrap {background: #fff;}
+/* page header
+----------------------------------*/
+.l-baseHeader {
+  clear: both;
+  height: $hdrHeight;
+  padding: 30px 30px 0;
+}
+//main logotype
+.b-mainLogo{
+  float: left;
+  display: block;
+  margin-top: 10px;
+}
+
+/*about block in header*/
+.b-hdr__about{
+  font-style: italic;
+  color:#939393;
+  width:360px;
+  padding-left: 40px;
+  margin-bottom: 18px;
+}
+//main navigation
+.b-hdr__nav{
+  width:360px;
+  padding-left: 40px;
+  ul{@include jList-singleLine;}
+  a{font-weight:bold; font-size: 1.077em;text-transform: uppercase;}
+}
+/*header phone*/
+.b-hdr__phone{
+  color:$attentionColor;
+  text-align: right;
+  font: 2.769em $addFontBold;
+  line-height: 1;
+  margin-bottom: 24px;
+  sup{font: 0.583em $addFontRegular;}
+}
+/*header shopcart*/
+.b-hdr__shopcart{
+  display: block;
+  @include border-radius;
+  padding:10px 20px 10px 50px;
+  background: url(../images/icon-shopcart.png) 15px 50% no-repeat;
+  border:1px dashed #ebebeb;
+  font-size: 1.077em;
+  text-decoration: none;
+  @include single-transition(all,.4s,ease,0s);
+  &:hover{background-position: 25px 50%; border-color:$baseFontColor;}
+  .shopcart{color:$attentionColor; font-weight: bold;text-decoration: underline;}
+  .price{color:$baseFontColor}
+}
+/*header counter*/
+.b-hdr__counter{
+  margin-right: 50px;
+  float: right;
+  text-align: right;
+  color:#808080;
+  font-size: 0.923em;
+  text-align: center;
+}
+.b-hdr__counter__item{
+  display: block;
+  color:#5f5f5f;
+  font-size: 1.583em;
+  padding:5px 0;
+  span{
+    @include border-radius(5px);
+    background-color: #fff;
+    border: solid 1px #d1d1d1;
+    @include background-image(linear-gradient(bottom, rgba(0,0,0,.05), rgba(255,255,255,.05)));
+    margin:0 2px;
+    padding: 2px 4px;
+  }
+}
+/* page content
+------------------------------------*/
+.l-contentWrap {
+
+}
+  //main column-------------->
+  .l-columnMain{}
+  //left column-------------->
+  .l-columnLt{}
+  //right column-------------->
+  .l-columnRt{}
+
+/* Footer
+------------------------------------*/
+.l-baseFooter {
+  position: relative;
+  padding: 40px 30px 100px;
+  border-top: 1px solid #e2e2e2;
+}
+.b-ftr__copyrights{
+  position: absolute;
+  bottom: 0;
+  clear: both;
+  height: 95px;
+  color: #939393;
+  font-size: 0.923em;
+  @include jList-singleLine;
+  width:940px;
+  margin:0 auto;
+  small{
+    display: block;
+    span{display: block;}
+  }
+}
+.b-ftr__phone{
+  margin:10px 0;
+  color: #3e3e3e;
+  font: 2em $addFontBold;
+  sup{font: 0.615em $addFontRegular;}
+}
+.b-ftr__nav{@include ftr__list; margin:25px 0;}
+.b-ftr__partners{
+  @include ftr__list; float: left;
+  width:140px;
+  margin:0 15px;
+}
+/*MAIN page specific elements styles
+-----------------------------------------------------------------------------------------------*/
+.b-mainPage__search{
+  padding:0 55px;
+  position: relative;
+  background: #549416 url(../images/bg-mainPage__search__label.jpg);
+  @include vCtr;
+  height: 83px;
+  width:$baseWidth;
+  .bigText{
+    @include inline-block;
+    background: url(../images/mainPage__search__label.png);
+    width:155px;
+    height: 46px;
+  }
+  input{
+    font-size: 1.385em;
+    color:#989898;
+    padding:0 15px;
+    margin:0 35px;
+    width: 500px;
+    height: 48px;
+    @include border-radius(5px);
+    background-color: #fff;
+    border: solid 4px rgb(66,117,17);
+    @include single-transition(all,.4s,ease,0s);
+    &:focus{
+      outline: none;
+      border-color: rgba(66,117,17,.7);
+    }
+  }
+  button{
+    font-size: 1.385em;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 1px rgba(0,0,0,.43);
+
+    position: absolute;
+    top:20px;
+    left:662px;
+    border: none;
+    width: 83px;
+    height: 41px;
+    //@include border-radius(0 5px 5px 0);
+    background-color: rgb(255,118,133);
+    @include filter-gradient(#ff7685, #a81822, vertical);
+    $experimental-support-for-svg: true;
+    @include background-image(linear-gradient(top,  rgba(255,118,133,1) 0%,rgba(251,56,72,1) 3%,rgba(233,38,54,1) 15%,rgba(222,31,46,1) 25%,rgba(214,32,45,1) 33%,rgba(201,29,41,1) 53%,rgba(199,29,42,1) 98%,rgba(168,24,34,1) 100%));
+    &:focus, &:hover{
+      outline: none;
+      background-color: rgb(255,119,135);
+      @include filter-gradient(#ff7787, #bf1927, vertical);
+      @include background-image(linear-gradient(top,  rgba(255,119,135,1) 0%,rgba(255,57,74,1) 3%,rgba(255,50,70,1) 8%,rgba(254,46,62,1) 10%,rgba(255,43,63,1) 13%,rgba(254,38,53,1) 18%,rgba(255,34,51,1) 23%,rgba(239,32,48,1) 38%,rgba(226,30,44,1) 60%,rgba(226,30,44,1) 98%,rgba(191,25,39,1) 100%));
+    }
+    &:active{
+      background-color: rgb(250,94,107);
+      @include filter-gradient(#fa5e6b, #c71d2a, vertical);
+      @include background-image(linear-gradient(top,  rgba(250,94,107,1) 0%,rgba(203,46,57,1) 3%,rgba(199,33,45,1) 15%,rgba(199,29,42,1) 23%,rgba(199,29,42,1) 100%));
+    }
+  }
+  .example{
+    @include inline-block;
+    width:150px;
+    color:#fff;
+    line-height: 1.2;
+  }
+}
+/*some page specific elements styles
+------------------------------------------------------------------------------------------------*/
+/*some page specific elements styles
+------------------------------------------------------------------------------------------------*/
+/*plugins styles
+------------------------------------------------------------------------------------------------*/
+/*MODIFICATORS styles
+------------------------------------------------------------------------------------------------*/
+.m-width__340{width:340px;}
+.m-margin_40{margin: 40px;}
+//debug
+* { outline: 2px dotted red; }
+* * { outline: 2px dotted green; }
+* * * { outline: 2px dotted orange; }
+* * * * { outline: 2px dotted blue; }
+* * * * * { outline: 1px solid red; }
+* * * * * * { outline: 1px solid green; }
+* * * * * * * { outline: 1px solid orange; }
+* * * * * * * * { outline: 1px solid blue; }
