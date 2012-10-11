@@ -165,7 +165,7 @@ $ftrHeight:430px;
 }
 .l-centering{@include vCtr; height: inherit;}
 
-@mixin aritcles__title{
+@mixin badge{
   @include box-shadow(0 1px 1px rgba(0,0,0,.37));
   @include background-image(linear-gradient(bottom, rgba(0,0,0,.1), rgba(255,255,255,.1)));
   @include ie9-gradient-support;
@@ -175,8 +175,16 @@ $ftrHeight:430px;
   text-transform: uppercase;
   color: #fff;
   text-shadow: 0 1px rgba(0,0,0,.43);
-  //background-color: #4e8814;
-  //background-color: #c71d2a;
+
+
+}
+@mixin badge_good{@include badge;background-color: #4e8814;}
+@mixin badge_bad{@include badge; background-color: #c71d2a;}
+
+@mixin title{
+  font-size: 18px;
+  font-weight: bold;
+  color:$h1Color;
 }
 /*LAYOUT
 ----------------------------------------------------------*/
@@ -238,9 +246,8 @@ input[type=radio]{width: 15px;height: 15px;}
 }
 //main navigation
 .b-hdr__nav{
-  width:360px;
   padding-left: 40px;
-  ul{@include jList-singleLine;}
+  ul{@include jList;}
   a{font-weight:bold; font-size: 1.077em;text-transform: uppercase;}
 }
 /*header phone*/
@@ -284,8 +291,8 @@ input[type=radio]{width: 15px;height: 15px;}
     @include border-radius(5px);
     background-color: #fff;
     border: solid 1px #d1d1d1;
-    @include background-image(linear-gradient(bottom, rgba(0,0,0,.05), rgba(255,255,255,.05)));
     @include ie9-gradient-support;
+    @include background-image(linear-gradient(bottom, rgba(0,0,0,.05), rgba(255,255,255,.05)));
     margin:0 2px;
     padding: 2px 4px;
   }
@@ -429,7 +436,10 @@ input[type=radio]{width: 15px;height: 15px;}
     margin:0 10px;
     text-transform: uppercase;
   }
-  select{@include inline-block;}
+  select{
+    @include inline-block;
+    width: 200px;
+  }
 }
 /*TEMPLATES STARTS
 -----------------------------------------------------------------------------------------------
@@ -452,6 +462,7 @@ input[type=radio]{width: 15px;height: 15px;}
     height: 46px;
   }
   input{
+    box-shadow: none;
     font-size: 18px;
     color:#989898;
     padding:0 15px;
@@ -591,8 +602,7 @@ input[type=radio]{width: 15px;height: 15px;}
   margin:40px 0 20px;
   >header{margin-bottom: 20px;}
   .title{
-    background-color: #c71d2a;
-    @include aritcles__title;
+    @include badge_bad;
   }
   .readAll{
     color:#b6b6b6;
@@ -609,7 +619,7 @@ input[type=radio]{width: 15px;height: 15px;}
 }
 .indexPage__discount{
   @extend .indexPage__news;
-  .title{background-color: #4e8814;}
+  .title{@include badge_good;}
 }
 //promoText(scrollable)
 .indexPage__promoText{
@@ -710,13 +720,17 @@ input[type=radio]{width: 15px;height: 15px;}
 ------------------------------------------------------------------------------------------------*/
 .page-news{
   margin:30px;
-  >header{margin:20px 0;border-bottom: 1px solid $borderColor;}
-  .page-news__title{
+  >header{
+    margin:20px 0;border-bottom: 1px solid $borderColor;
+  }
+  .page-title{
     font-size: 27px;
+    line-height: 1;
     span{
       font-size: 14px;
       color: 4c4c4c;
       display: block;
+      margin:15px 0;
     }
   }
 }
@@ -743,8 +757,41 @@ input[type=radio]{width: 15px;height: 15px;}
     font-size: 0.875em;
   }
 }
-/*some page specific elements styles
+/*DISCOUNT page specific elements styles
 ------------------------------------------------------------------------------------------------*/
+.page-discount{
+  @extend .page-news;
+  >header{margin-bottom: 0;}
+  .b-pagination{margin-top: 45px;}
+}
+.page-discount__item{
+  padding:17px 0;
+  border-bottom: 1px solid $borderColor;
+  font-size: 16px;
+  color:#696969;
+  >*{@include inline-block;}
+  .discount-on{
+    @include badge_good;
+    font-size: $baseFontSize;
+    margin:0 20px;
+    display: block;
+    padding:3px 6px;
+  }
+  .discount-off{
+    @include badge_bad;
+    font-size: $baseFontSize;
+    margin:0 20px;
+    display: block;
+    padding:3px 8px;
+  }
+  time{
+    display: block;
+    text-align: center;
+    padding:3px 0;
+    font-size: 14px;
+  }
+  .title{@include title;}
+}
 /*some page specific elements styles
 ------------------------------------------------------------------------------------------------*/
 /*some page specific elements styles
@@ -759,9 +806,7 @@ input[type=radio]{width: 15px;height: 15px;}
 ------------------------------------------------------------------------------------------------*/
 //scrollable
 
-
-
-//.scrollable{
+////.scrollable{
 //  margin:15px 0;
 //  width: 800px;
 //  height:60px;
@@ -816,6 +861,11 @@ input[type=radio]{width: 15px;height: 15px;}
 //layout modificators
 .l-padding_lr_30{padding:0 30px;}
 .l-jList{@include jList;}
+//firefox hack
+@-moz-document url-prefix(){
+  .l-baseWrap{position:relative;}
+  .b-mainPage__search button{left:66.74%;top:187px;}
+}
 //debug
 //* { outline: 2px dotted red; }
 //* * { outline: 2px dotted green; }
