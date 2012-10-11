@@ -80,7 +80,7 @@ $ftrHeight:430px;
     margin: 0 auto;
     width: $baseWidth;
   }
-  .l-contentWrap{padding-bottom: $ftrHeight + 20 !important;}
+  .l-contentWrap{padding-bottom: $ftrHeight !important;}
   .l-baseFooter{
     position: relative;
     height: $ftrHeight;
@@ -770,6 +770,7 @@ input[type=radio]{width: 15px;height: 15px;}
   font-size: 16px;
   color:#696969;
   >*{@include inline-block;}
+  .image{width:123px; height: 60px;@include imgWrap;}
   .discount-on{
     @include badge_good;
     font-size: $baseFontSize;
@@ -791,9 +792,48 @@ input[type=radio]{width: 15px;height: 15px;}
     font-size: 14px;
   }
   .title{@include title;}
+  .content{
+    white-space: nowrap;max-width:675px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
-/*some page specific elements styles
+/*SEARCH RESULTS page specific elements styles
 ------------------------------------------------------------------------------------------------*/
+.b-search_results{
+  margin:1px 0 0 220px;
+  padding:5px 20px;
+  box-shadow: -2px 0 4px #f1f1f3;
+  .item{
+    margin:15px 0;
+    @include jList;
+    padding:25px 20px;
+    height: 130px;
+    color:$baseFontColor;
+    text-decoration: none;
+    display: block;
+    border: solid 1px #d8d8d8;
+    @include border-radius;
+    &:hover{
+      @include box-shadow(0 1px 5px rgba(0,0,0,.5));
+      border: solid 2px #569516;
+      .title{color:$h2Color;}
+    }
+    .image{width:150px; height: 84px; @include imgWrap;}
+    .title{
+      @include title;
+      @include single-transition(all,.4s,ease,0s);
+    }
+    .cuisine{font-size: 12px;}
+    .feedbacks__counter{
+      @include title;font-size: 16px;
+      padding-left:20px;
+      background: url(../images/icon-feedbacks__counter.png) 0 50% no-repeat;
+    }
+    .minimal_purchase,
+    .working_hours{@include title;font-size: 16px;display: block;text-align: center;}
+  }
+}
 /*some page specific elements styles
 ------------------------------------------------------------------------------------------------*/
 /*some page specific elements styles
