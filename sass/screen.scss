@@ -192,6 +192,7 @@ body {
   @include layout;
   background: url(../images/bg-body.jpg);
 }
+h1,h2,h3,h4,h5,h6{color: $h1Color;}
 a {
   @include link-colors($linkDefaultColor, $linkHoverColor, $linkActiveColor, $linkVisitedColor, $linkFocusedColor);
   @include single-transition(all,.4s,ease,0s);
@@ -304,15 +305,23 @@ input[type=radio]{width: 15px;height: 15px;}
 /* Footer
 ------------------------------------*/
 .l-baseFooter {
+  //@include box-sizing(content-box);
   position: relative;
-  padding: 40px 30px 100px;
-  border-top: 1px solid $borderColor;
+  padding: 40px 30px 70px;
+  &:before{
+    @include pseudoBlockAbs;
+    width:935px;
+    border-top: 1px solid $borderColor;
+    top:0;
+    left: 50%;
+    margin-left: -467px;
+  }
 }
 .b-ftr__copyrights{
   position: absolute;
   bottom: 0;
   clear: both;
-  height: 95px;
+  height: 60px;
   color: #939393;
   font-size: 0.923em;
   @include jList-singleLine;
@@ -410,7 +419,18 @@ input[type=radio]{width: 15px;height: 15px;}
   }
   .unactive{color:#696969;}
 }
-
+//filter
+.b-filter{
+  .title{
+    @include inline-block;
+    color:$attentionColor;
+    font-size: 1.077em;
+    font-weight: bold;
+    margin:0 10px;
+    text-transform: uppercase;
+  }
+  select{@include inline-block;}
+}
 /*TEMPLATES STARTS
 -----------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------*/
@@ -686,8 +706,43 @@ input[type=radio]{width: 15px;height: 15px;}
   .item{padding:15px 0 25px;border-bottom: 1px solid $borderColor;}
 }
 
-/*some page specific elements styles
+/*NEWS page specific elements styles
 ------------------------------------------------------------------------------------------------*/
+.page-news{
+  margin:30px;
+  >header{margin:20px 0;border-bottom: 1px solid $borderColor;}
+  .page-news__title{
+    font-size: 27px;
+    span{
+      font-size: 14px;
+      color: 4c4c4c;
+      display: block;
+    }
+  }
+}
+.page-news__item{
+  margin:20px 0;
+  font-size: 1.231em;
+  color: #626262;
+  >header{margin-bottom: 5px;}
+  time{
+    color:#000;
+    background: #ffc85d;
+    padding:1px 3px;
+    font-size: 0.875em;
+  }
+  .title{
+    font-size: 1.125em;
+    color:$h1Color;
+    font-weight: bold;
+    margin:0 10px;
+  }
+  .readAll{
+    padding:15px 0;
+    @include link-colors(#529014, $linkHoverColor);
+    font-size: 0.875em;
+  }
+}
 /*some page specific elements styles
 ------------------------------------------------------------------------------------------------*/
 /*some page specific elements styles
