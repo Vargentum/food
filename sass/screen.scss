@@ -22,6 +22,7 @@
 @import "compass/utilities";
 
 @import "sprites/social/*.png";
+@import "sprites/scroll/*.png";
 
 //border-box-sizing for all elems
 *{@include box-sizing(border-box);}
@@ -1231,7 +1232,7 @@ input[type=radio]{width: 15px;height: 15px;}
   background-color: #fff;
   left:50%;
   margin-left: -440px;
-  display: none;
+
   >header{
     @include border-radius(15px 15px 0 0);
     position: relative;
@@ -1263,11 +1264,12 @@ input[type=radio]{width: 15px;height: 15px;}
   .content{
     margin:30px 0 15px;
     height: 410px;
-    overflow-y: scroll;
+    overflow-y: auto;
+    width:845px;
   }
   .item{
     @include jList;
-    padding:0 70px 10px 30px;
+    margin:10px 45px 10px 25px;
     border-bottom: 1px solid $borderColor;
     &:last-child{border-bottom: none;}
   }
@@ -1330,7 +1332,59 @@ input[type=radio]{width: 15px;height: 15px;}
   }
 }
 
-
+//b-addToCart_popup
+.b-addToCart_popup{
+  @include jList;
+  position: fixed;
+  top:0;
+  left:50%;
+  margin-left: -241px;
+  width: 482px;
+  @include border-radius(0 0 15px 15px);
+  background-color: #4f8b14;
+  @include box-shadow(0 0 16px rgba(0,0,0,.75));
+  @include ie9-gradient-support;
+  @include background-image(linear-gradient(bottom, rgba(0,0,0,.2), rgba(255,255,255,.2)));
+  padding:18px 20px 18px 55px;
+  &:before{
+    @include pseudoBlockAbs;
+    background-image: url(../images/icon-shopcart-middle.png);
+    width:85px;
+    height: 65px;
+    top:0;
+    left:-30px;
+  }
+  .content{font-size: 14px;color:#fff;display: block;}
+  .error{font-size: 11px;color: #afdc82;}
+  .button{
+    padding:5px 10px;
+    text-decoration: none;
+    font-size: 12px;
+    color: #541016;
+    text-shadow: 0 1px rgba(255,255,255,.43);
+    @include border-radius(8px, 6px);
+    background-color: #dbaf00;
+    @include box-shadow(inset 0 1px rgba(255,255,255,.11));
+    border: solid 1px rgba(207,108,11,.93);
+    background-color: rgb(255,255,27);
+    @include filter-gradient(#ffff1b, #deb100, vertical);
+    $experimental-support-for-svg: true;
+    @include background-image(linear-gradient(top,  rgba(255,255,27,1) 0%,rgba(255,231,1,1) 4%,rgba(254,203,0,1) 48%,rgba(248,199,0,1) 52%,rgba(226,181,0,1) 87%,rgba(222,177,0,1) 100%));
+  }
+  .sucsess{
+    position: fixed;
+    top:80px;
+    left: 47.5%;
+    background: url(../images/bg-addedToCart.png);
+    width:277px;
+    height: 76px;
+    font-size: 19px;
+    color: #366c00;
+    padding-top: 30px;
+    text-align: center;
+    &:before{content: '✔';padding-right: 10px;}
+  }
+}
 
 //scrollable
 
@@ -1411,3 +1465,128 @@ input[type=radio]{width: 15px;height: 15px;}
 //* * * * * * { outline: 1px solid green; }
 //* * * * * * * { outline: 1px solid orange; }
 //* * * * * * * * { outline: 1px solid blue; }
+
+
+/*
+ * CSS Styles that are needed by jScrollPane for it to operate correctly.
+ *
+ * Include this stylesheet in your site or copy and paste the styles below into your stylesheet - jScrollPane
+ * may not operate correctly without them.
+ */
+
+.jspContainer
+  {
+  overflow: hidden;
+  position: relative;
+}
+
+.jspPane
+  {
+  position: absolute;
+}
+
+.jspVerticalBar
+  {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 100%;
+  background: #fff;
+}
+
+.jspHorizontalBar
+  {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: #fff;
+}
+
+.jspVerticalBar *,
+.jspHorizontalBar *
+  {
+  margin: 0;
+  padding: 0;
+}
+
+.jspCap
+  {
+  display: none;
+}
+
+.jspHorizontalBar .jspCap
+  {
+  float: left;
+}
+
+.jspTrack
+  {
+  width:1px;
+  margin:0 auto;
+  background: #cecece;
+  position: relative;
+
+}
+
+.jspDrag
+  {
+  position: relative;
+  top: 0;
+  left: -8px;
+  cursor: pointer;
+  width: 17px;
+  height: 37px;
+  @include border-radius(8px 9px 9px 8px, 8px);
+  background-color: #fff;
+  border: solid 1px #d1d1d1;
+  @include background-image(linear-gradient(bottom, rgba(0,0,0,.05), rgba(255,255,255,.05)));
+}
+
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag
+  {
+  float: left;
+  height: 100%;
+}
+
+.jspArrow
+  {
+  text-indent: -20000px;
+  display: block;
+  cursor: pointer;
+  position: relative;
+  width:21px; height: 21px;
+}
+.jspArrowUp{@include scroll-sprite(up);}
+.jspArrowDown{@include scroll-sprite(down);}
+.jspArrow.jspDisabled
+  {
+  cursor: default; color:$borderColor;
+}
+
+.jspHorizontalBar .jspArrow
+  {
+  width: 16px;
+  float: left;
+  height: 100%;
+}
+
+.jspVerticalBar .jspArrow:focus
+  {
+  outline: none;
+}
+
+.jspCorner
+  {
+  background: #eeeef4;
+  float: left;
+  height: 100%;
+}
+
+img
+  {
+  margin: 1em 0;
+}

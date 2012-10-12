@@ -34,5 +34,9 @@ $(function(){
             loadSpeed: 200,
             opacity: 0.58
         }
-    })
+    });
+    $('.shopcart__overlay .content').jScrollPane({
+        showArrows: true
+    });
+    $('.shopcart__overlay').css('display','none');
 });
