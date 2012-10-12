@@ -897,7 +897,7 @@ input[type=radio]{width: 15px;height: 15px;}
 .b-member{
   >header{
     background: url(../images/bg-member__header.png);
-    @include hList;
+    @include jList;
     >*{@include inline-block;}
   }
   .header__image{
@@ -1044,6 +1044,7 @@ input[type=radio]{width: 15px;height: 15px;}
   .b-numberAndPrice{margin:25px 0;}
   .purchase{@include button_good; font-size: 24px;padding:5px 15px;}
   .b-social__like{margin: 40px 0;}
+  .b-menuNav{vertical-align: top;}
 }
 
 .b-popularProducts{
