@@ -23,4 +23,16 @@ $(function(){
 $(function(){
     $(".scrollable").scrollable();
 });
-
+$(function(){
+    $('.b-tabsNav').tabs('.b-tabsContent > div');
+});
+$(function(){
+    $('a[rel]').overlay({
+        effect: "apple",
+        mask: {
+            color: '#000',
+            loadSpeed: 200,
+            opacity: 0.58
+        }
+    })
+});

@@ -36,10 +36,10 @@
             <!--main navigation block-->
             <nav class="b-hdr__nav" itemscope itemtype='http://schema.org/SiteNavigationElement'>
                 <ul>
-                    <li><a href="#">Рестораны</a></li>
-                    <li><a href="#">Акции</a></li>
-                    <li><a href="#">О сервисе</a></li>
-                    <li><a href="#">Отзывы</a></li>
+                    <li><a href="#">Рестораны   </a>
+                    <li><a href="#">Акции</a>
+                    <li><a href="#">О сервисе</a>
+                    <li><a href="#">Отзывы</a>
                 </ul>
             </nav>
         </div>
@@ -82,103 +82,161 @@
     <!-- CONTENT -->
     <div class="l-contentWrap">
 
-        <!--START NEWS page template-->
-        <div class="page-news">
-            <header class="l-jList">
-                <h1 class="page-title">
-                    Новости
-                    <span>Новости события</span>
-                </h1>
-                <!--filter-->
-                <label class="b-filter">
-                    <span class="title">Фильтр:</span>
-                    <select>
-                        <option>Все</option>
-                        <option>Тололько действующие</option>
-                        <option>Варибаси</option>
-                        <option>СушиГоу</option>
-                        <option>Илтокио</option>
-                        <option>Жарпица</option>
-                        <option>Время есть</option>
-                        <option>Все действующие</option>
-                        <option>Все действующие</option>
-                        <option>Все действующие</option>
-                    </select>
-                </label>
-            </header>
-            <!--The new-->
-            <article class="page-news__item">
+        <!--START page template-->
+        <div class="b-catalog">
+            <nav class="b-catalog__nav">
                 <header>
-                    <time datetime="2012-12-21">21.12.2012</time>
-                    <a class="title" href="#">Золотая вилка Летний сезон: лидеры</a>
+                    <h3 class="title">Кухни и блюда:</h3>
+                    <a href="#" class="reset">Сбросить</a>
                 </header>
-                <div>
-                    Друзья, подходит к концу первый тур голосования в рамках «Золотой вилки Summer-2012». Финал начнется в полночь с 31 июля на 1 августа.
-                </div>
-                <a href="#" class="readAll">подробнее</a>
-            </article>
-            <!--The new-->
-            <article class="page-news__item">
-                <header>
-                    <time datetime="2012-12-21">21.12.2012</time>
-                    <a class="title" href="#">Золотая вилка Летний сезон: лидеры</a>
-                </header>
-                <div>
-                    Друзья, подходит к концу первый тур голосования в рамках «Золотой вилки Summer-2012». Финал начнется в полночь с 31 июля на 1 августа.
-                </div>
-                <a href="#" class="readAll">подробнее</a>
-            </article>
-            <!--The new-->
-            <article class="page-news__item">
-                <header>
-                    <time datetime="2012-12-21">21.12.2012</time>
-                    <a class="title" href="#">Золотая вилка Летний сезон: лидеры</a>
-                </header>
-                <div>
-                    Друзья, подходит к концу первый тур голосования в рамках «Золотой вилки Summer-2012». Финал начнется в полночь с 31 июля на 1 августа.
-                </div>
-                <a href="#" class="readAll">подробнее</a>
-            </article>
-            <!--The new-->
-            <article class="page-news__item">
-                <header>
-                    <time datetime="2012-12-21">21.12.2012</time>
-                    <a class="title" href="#">Золотая вилка Летний сезон: лидеры</a>
-                </header>
-                <div>
-                    <p>Друзья, подходит к концу первый тур голосования в рамках «Золотой вилки Summer-2012». Финал начнется в полночь с 31 июля на 1 августа.
-                    Друзья, подходит к концу первый тур голосования в рамках «Золотой вилки Summer-2012». Финал начнется в полночь с 31 июля на 1 августа.
-                    Друзья, подходит к концу первый тур голосования в рамках «Золотой вилки Summer-2012». Финал начнется в полночь с 31 июля на 1 августа.
-                    <p>Друзья, подходит к концу первый тур голосования в рамках «Золотой вилки Summer-2012». Финал начнется в полночь с 31 июля на 1 августа.
-                </div>
-                <a href="#" class="readAll">подробнее</a>
-            </article>
-            <!--The new-->
-            <article class="page-news__item">
-                <header>
-                    <time datetime="2012-12-21">21.12.2012</time>
-                    <a class="title" href="#">Золотая вилка Летний сезон: лидеры</a>
-                </header>
-                <div>
-                    Друзья, подходит к концу первый тур голосования в рамках «Золотой вилки Summer-2012». Финал начнется в полночь с 31 июля на 1 августа.
-                </div>
-                <a href="#" class="readAll">подробнее</a>
-            </article>
-
-            <!--pagination-->
-            <nav class="b-pagination">
-                <ul>
-                    <li><a href="#" class="active">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
+                <ul class="list">
+                    <li class="item">
+                        <label>
+                            <input type="checkbox">
+                            <span>Популярное</span>
+                        </label>
+                    </li>
+                    <li class="item">
+                        <label>
+                            <input type="checkbox">
+                            <span>Суши</span>
+                        </label>
+                    </li>
+                    <li class="item">
+                        <label>
+                            <input type="checkbox">
+                            <span>Сашими</span>
+                        </label>
+                    </li>
+                    <li class="item">
+                        <label>
+                            <input type="checkbox">
+                            <span>Роллы</span>
+                        </label>
+                    </li>
+                    <li class="item">
+                        <label>
+                            <input type="checkbox">
+                            <span>Сеты</span>
+                        </label>
+                    </li>
+                    <li class="item">
+                        <label>
+                            <input type="checkbox">
+                            <span>Салаты</span>
+                        </label>
+                    </li>
+                    <li class="item">
+                        <label>
+                            <input type="checkbox">
+                            <span>Закуски</span>
+                        </label>
+                    </li>
+                    <li class="item">
+                        <label>
+                            <input type="checkbox">
+                            <span>Супы</span>
+                        </label>
+                    </li>
                 </ul>
-                <a href="#" class="prev unactive">Назад</a>
-                <a href="#" class="next">Вперед</a>
             </nav>
+
+            <!--search results-->
+            <div class="b-search_results">
+
+            <header class="b-catalog__sort">
+                <span class="title">Показать рестораны</span>
+                <a href="#" class="active">Открытые</a>
+                <a href="#">Все</a>
+            </header>
+            <!--one item-->
+            <a href="#" class="item">
+                <span class="image">
+                    <img src="images/tmp/brand-2.jpg" alt="">
+                </span>
+                <span>
+                    <span class="title">ИЛТОКИО</span>
+                    <br><span class="cuisine">Кухня: Русская / Украинская</span>
+                    <br><span class="feedbacks">Отзывы:
+                        <span class="feedbacks__counter">2115</span>
+                    </span>
+                </span>
+                <span>
+                    мин. сумма заказа
+                    <span class="minimal_purchase">1000 руб</span>
+                </span>
+                <span>
+                    часы приема заказа
+                    <span class="working_hours">10ч.-23ч.</span>
+                </span>
+            </a>
+            <!--one item-->
+            <a href="#" class="item">
+                <span class="image">
+                    <img src="images/tmp/brand-3.jpg" alt="">
+                </span>
+                <span>
+                    <span class="title">ИЛТОКИО</span>
+                    <br><span class="cuisine">Кухня: Русская / Украинская</span>
+                    <br><span class="feedbacks">Отзывы:
+                        <span class="feedbacks__counter">255</span>
+                    </span>
+                </span>
+                <span>
+                    мин. сумма заказа
+                    <span class="minimal_purchase">1000 руб</span>
+                </span>
+                <span>
+                    часы приема заказа
+                    <span class="working_hours">10ч.-23ч.</span>
+                </span>
+            </a>
+            <!--one item-->
+            <a href="#" class="item">
+                <span class="image">
+                    <img src="images/tmp/brand-3.jpg" alt="">
+                </span>
+                <span>
+                    <span class="title">ИЛТОКИО</span>
+                    <br><span class="cuisine">Кухня: Русская / Украинская</span>
+                    <br><span class="feedbacks">Отзывы:
+                        <span class="feedbacks__counter">255</span>
+                    </span>
+                </span>
+                <span>
+                    мин. сумма заказа
+                    <span class="minimal_purchase">1000 руб</span>
+                </span>
+                <span>
+                    часы приема заказа
+                    <span class="working_hours">10ч.-23ч.</span>
+                </span>
+            </a>
+            <!--one item-->
+            <a href="#" class="item">
+                <span class="image">
+                    <img src="images/tmp/brand-2.jpg" alt="">
+                </span>
+                <span>
+                    <span class="title">ИЛТОКИО</span>
+                    <br><span class="cuisine">Кухня: Русская / Украинская</span>
+                    <br><span class="feedbacks">Отзывы:
+                        <span class="feedbacks__counter">255</span>
+                    </span>
+                </span>
+                <span>
+                    мин. сумма заказа
+                    <span class="minimal_purchase">1000 руб</span>
+                </span>
+                <span>
+                    часы приема заказа
+                    <span class="working_hours">10ч.-23ч.</span>
+                </span>
+            </a>
         </div>
-        <!--END NEWS page template-->
+            <!--end search results block-->
+        </div>
+        <!--END page template-->
 
     </div><!-- END CONTENT -->
 </div><!-- END WRAPPER -->
