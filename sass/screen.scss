@@ -1581,27 +1581,19 @@ input[type=radio]{width: 15px;height: 15px;}
   {
   cursor: default; color:$borderColor;
 }
-
 .jspHorizontalBar .jspArrow
   {
   width: 16px;
   float: left;
   height: 100%;
 }
-
 .jspVerticalBar .jspArrow:focus
   {
   outline: none;
 }
-
 .jspCorner
   {
   background: #eeeef4;
   float: left;
   height: 100%;
-}
-
-img
-  {
-  margin: 1em 0;
 }

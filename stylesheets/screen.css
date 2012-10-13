@@ -3986,26 +3986,21 @@ input[type=radio] {
   color: #e2e2e2;
 }
 
-/* line 1586, ../sass/screen.scss */
+/* line 1585, ../sass/screen.scss */
 .jspHorizontalBar .jspArrow {
   width: 16px;
   float: left;
   height: 100%;
 }
 
-/* line 1593, ../sass/screen.scss */
+/* line 1591, ../sass/screen.scss */
 .jspVerticalBar .jspArrow:focus {
   outline: none;
 }
 
-/* line 1598, ../sass/screen.scss */
+/* line 1595, ../sass/screen.scss */
 .jspCorner {
   background: #eeeef4;
   float: left;
   height: 100%;
-}
-
-/* line 1605, ../sass/screen.scss */
-img {
-  margin: 1em 0;
 }

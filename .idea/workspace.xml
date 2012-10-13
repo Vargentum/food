@@ -85,7 +85,7 @@
           <file leaf-file-name="screen.scss" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/sass/screen.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="637" column="21" selection-start="15696" selection-end="15696" vertical-scroll-proportion="0.31616765">
+                <state line="1582" column="1" selection-start="44242" selection-end="44242" vertical-scroll-proportion="0.48622754">
                   <folding />
                 </state>
               </provider>
@@ -378,21 +378,11 @@
         <state line="107" column="46" selection-start="4988" selection-end="4988" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="191" column="0" selection-start="7497" selection-end="7497" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sass/screen.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state line="173" column="0" selection-start="4239" selection-end="4269" vertical-scroll-proportion="0.0">
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="43" selection-start="2396" selection-end="2396" vertical-scroll-proportion="-0.78571427" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/serv_nav.html">
@@ -474,7 +464,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sass/screen.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="637" column="21" selection-start="15696" selection-end="15696" vertical-scroll-proportion="0.31616765">
+        <state line="1582" column="1" selection-start="44242" selection-end="44242" vertical-scroll-proportion="0.48622754">
           <folding />
         </state>
       </provider>
