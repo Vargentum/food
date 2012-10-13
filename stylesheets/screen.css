@@ -1681,13 +1681,13 @@ input[type=radio] {
 /* line 708, ../sass/screen.scss */
 .indexPage__promoText .scrollable {
   margin: 15px 0;
-  width: 800px;
+  width: 870px;
   height: auto;
   height: 140px;
 }
 /* line 714, ../sass/screen.scss */
 .indexPage__promoText .scrollable__item {
-  width: 800px;
+  width: 870px;
 }
 /* line 715, ../sass/screen.scss */
 .indexPage__promoText .item__title {

@@ -30,7 +30,9 @@ $(function(){
 });
 
 $(function(){
-    $(".scrollable").scrollable();
+    $(".scrollable").scrollable({
+        circular: true
+    });
 });
 $(function(){
     $('.b-tabsNav').tabs('.b-tabsContent > div');

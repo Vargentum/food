@@ -707,11 +707,11 @@ input[type=radio]{width: 15px;height: 15px;}
   @include jList;
   .scrollable{
     margin:15px 0;
-    width: 800px;
+    width: 870px;
     height: auto;
     height: 140px;
   }
-  .scrollable__item {width:800px;}
+  .scrollable__item {width:870px;}
   .item__title{
     font-size: 22px;
     color:$attentionColor;
