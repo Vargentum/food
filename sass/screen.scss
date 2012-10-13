@@ -23,6 +23,7 @@
 
 @import "sprites/social/*.png";
 @import "sprites/scroll/*.png";
+@import "sprites/counter/*.png";
 
 //border-box-sizing for all elems
 *{@include box-sizing(border-box);}
@@ -489,18 +490,31 @@ input[type=radio]{width: 15px;height: 15px;}
   margin:30px 0;
   .item{margin:15px 0;}
 }
-.b-numberAndPrice{
-  .number{
+
+.b-counter{
+  .counter__value{
+    @include inline-block;
+    width: 27px;
+    height: 21px;
+    @include border-radius(2px);
+    background-color: #fff;
+    @include box-shadow(0 0 0 3px rgba(255,255,255,.21), inset 1px 1px 2px rgba(0,0,0,.08));
+    border: solid 1px rgba(0,0,0,.2);
+    text-align: center;
     @include title;
-    width:50px;
     font-size: 14px;
-    @include inline-block;
   }
-  .price{
-    @include title;
-    margin-left: 7px;
+  .counter__prev{
     @include inline-block;
-    font-size: 24px;
+    @include counter-sprite(left);
+    text-decoration: none;
+    width:8px; height: 16px;
+  }
+  .counter__next{
+    @include inline-block;
+    text-decoration: none;
+    width:8px; height: 16px;
+    @include counter-sprite(right);
   }
 }
 /*TEMPLATES STARTS
@@ -584,7 +598,6 @@ input[type=radio]{width: 15px;height: 15px;}
     position: relative;
     margin:5px 0;
     width: 181px;
-    height: 207px;
     @include border-radius;
     background-color: #fff;
     border: solid 1px rgba(0,0,0,.1);
@@ -622,7 +635,7 @@ input[type=radio]{width: 15px;height: 15px;}
 }
 /*indexPage__openNow*/
 .b-indexPage__openNow{
-  margin-top: 30px;
+  margin: 30px 0 35px;
   border-top: 1px solid $borderColor;
   .title{
     font-size: 1.538em;
@@ -642,15 +655,14 @@ input[type=radio]{width: 15px;height: 15px;}
     font-size: 1.077em;
   }
   .scrollable{
-    margin:15px 0 35px;
     width: 800px;
-    height:60px;
+    height:80px;
   }
   .scrollable img {
     width:125px;
     height:60px;
   }
-  .scrollable__item {width:800px;}
+  .scrollable__item {width:800px;line-height: 1;}
 }
 //pageIndex banners
 .pageIndex__bnr{
@@ -1026,6 +1038,8 @@ input[type=radio]{width: 15px;height: 15px;}
     padding-bottom: 10px;
   }
   .item__title{@include title;font-size: 24px;}
+  .item__price{@include title;font-size: 24px;padding-left: 10px;}
+  .b-counter{margin:15px 0;&>*{@include inline-block;}}
   .image{
     padding:5px;
     border: 1px solid $borderColor;
@@ -1385,6 +1399,7 @@ input[type=radio]{width: 15px;height: 15px;}
     &:before{content: '✔';padding-right: 10px;}
   }
 }
+
 
 //scrollable
 
