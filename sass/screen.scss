@@ -924,6 +924,7 @@ input[type=radio]{width: 15px;height: 15px;}
   }
   .header__content{
     margin-top: 15px;
+    margin-right: 45px;
     width:690px;
     color:#636363;
     font-size: 12px;
@@ -936,6 +937,8 @@ input[type=radio]{width: 15px;height: 15px;}
   a{
     padding:5px 15px;
     font-size: 14px;
+    @include single-transition(none);
+    border:1px solid rgba(255,255,255,0);
     @include link-colors(#9b9b9b, #146c95);
     &.current{
       color: #146c95; text-decoration: none;
