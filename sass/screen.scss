@@ -868,9 +868,7 @@ input[type=radio]{width: 15px;height: 15px;}
   }
   .title{@include title; font-size: 18px;}
   .content{
-    white-space: nowrap;max-width:675px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+   width:675px;
   }
 }
 /*SEARCH RESULTS page specific elements styles
@@ -919,13 +917,13 @@ input[type=radio]{width: 15px;height: 15px;}
     >*{@include inline-block;}
   }
   .header__image{
-    width:250px;
+    width:225px;
     text-align: center;
   }
   .header__content{
     margin-top: 15px;
     margin-right: 45px;
-    width:690px;
+    width:705px;
     color:#636363;
     font-size: 12px;
   }
@@ -1004,7 +1002,7 @@ input[type=radio]{width: 15px;height: 15px;}
     font-size: 24px;
     border-bottom: 1px solid $borderColor;
   }
-  .item{@include jList;width:340px;color:#555;margin:30px 0;}
+  .item{@include jList;width:340px;color:#555;margin:15px 0;}
   .item__title{
     text-decoration: none;
     @include link-colors($h1Color, $linkHoverColor);
@@ -1080,7 +1078,7 @@ input[type=radio]{width: 15px;height: 15px;}
     margin-bottom: 25px;
   }
   .scrollable{width:720px; height: 250px;}
-  .scrollable__item{@include jList;width:720px;}
+  .scrollable__item{width:720px;}
   .scrollable__prev{
     position:absolute; right:40px;top:0;
     width:30px; height: 30px;
@@ -1368,13 +1366,13 @@ input[type=radio]{width: 15px;height: 15px;}
   @include box-shadow(0 0 16px rgba(0,0,0,.75));
   @include ie9-gradient-support;
   @include background-image(linear-gradient(bottom, rgba(0,0,0,.2), rgba(255,255,255,.2)));
-  padding:18px 20px 18px 55px;
+  padding:10px 20px 10px 55px;
   &:before{
     @include pseudoBlockAbs;
     background-image: url(../images/icon-shopcart-middle.png);
     width:85px;
     height: 65px;
-    top:0;
+    bottom: -15px;
     left:-30px;
   }
   .content{font-size: 14px;color:#fff;display: block;}
@@ -1396,16 +1394,17 @@ input[type=radio]{width: 15px;height: 15px;}
   }
   .sucsess{
     position: fixed;
-    top:80px;
+    top:55px;
     left: 47.5%;
     background: url(../images/bg-addedToCart.png);
     width:277px;
     height: 76px;
     font-size: 19px;
+    line-height: 30px;
     color: #366c00;
     padding-top: 30px;
     text-align: center;
-    &:before{content: '✔';padding-right: 10px;}
+    &:before{content: '✔';padding-right: 5px; font-size: 30px;line-height: 0;}
   }
 }
 
@@ -1435,7 +1434,12 @@ input[type=radio]{width: 15px;height: 15px;}
 }
 .scrollable__item {
   @include inline-block;
-  @include jList;
+  &>*{
+    margin-right:30px;
+    @include inline-block;
+    vertical-align: top;
+    &:last-of-type{margin-right: 0;}
+  }
 }
 .scrollable .active {
   border:2px solid #000;

@@ -30,9 +30,8 @@ $(function(){
 });
 
 $(function(){
-    $(".scrollable").scrollable({
-        circular: true
-    });
+    $("#openNow").scrollable({circular: true});
+    $('#promoText').scrollable({circular: true});
 });
 $(function(){
     $('.b-tabsNav').tabs('.b-tabsContent > div');
@@ -46,8 +45,6 @@ $(function(){
             opacity: 0.58
         }
     });
-    $('.shopcart__overlay .content').jScrollPane({
-        showArrows: true
-    });
+    $('.shopcart__overlay .content').jScrollPane({showArrows: true});
     $('.shopcart__overlay').css('display','none');
 });
